@@ -10,4 +10,9 @@ class Media extends Model
     {
         return $this->belongsTo('App\Project');
     }
+
+    public function links()
+    {
+        return $this->morphMany('App\Link', 'linkable');
+    }
 }

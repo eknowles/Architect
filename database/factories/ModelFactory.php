@@ -24,6 +24,16 @@ $factory->define(
 );
 
 $factory->define(
+    App\Link::class,
+    function (Faker\Generator $faker) {
+        return [
+            'title' => $faker->safeEmailDomain,
+            'url' => $faker->url,
+        ];
+    }
+);
+
+$factory->define(
     App\Media::class,
     function (Faker\Generator $faker) {
         return [

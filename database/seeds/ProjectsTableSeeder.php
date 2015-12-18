@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 class ProjectsTableSeeder extends Seeder
 {
     /**
@@ -11,8 +10,8 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(CKD\Project::class, 30)->create()->each(function($p) {
-            $p->media()->saveMany(factory(CKD\Media::class, 8)->make());
+        factory(App\Project::class, 30)->create()->each(function($p) {
+            $p->media()->saveMany(factory(App\Media::class, 8)->make());
         });
     }
 }

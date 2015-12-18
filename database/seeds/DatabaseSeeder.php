@@ -14,7 +14,22 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-         $this->call(ProjectsTableSeeder::class);
+        $this->call(ProjectsTableSeeder::class);
+
+        foreach ((range(1, 20)) as $index) {
+
+            $type = rand(0, 1) == 1 ? 'App\Project' : 'App\Page';
+
+
+            DB::table('linkables')->insert(
+                [
+                    'link_id' => rand(1, 20),
+                    'taggable_id' => rand(1, 20),
+                    'taggable_type' => rand(0, 1) == 1 ? 'App\Post' : 'App\Video'
+                ]
+            );
+
+        }
 
         Model::reguard();
     }

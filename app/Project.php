@@ -29,4 +29,9 @@ class Project extends Model
     {
         return $query->where('public', 0);
     }
+
+    public function links()
+    {
+        return $this->morphMany('App\Link', 'linkable');
+    }
 }

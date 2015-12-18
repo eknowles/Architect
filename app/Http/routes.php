@@ -5,5 +5,6 @@ Route::get('/', function () {
 });
 
 Route::resource('projects', 'ProjectController');
+Route::resource('api/links', 'API\LinkController');
 
 Route::get('/projects/{slug}', 'ProjectController@showSlug')->where('slug', '[A-Za-z-]+');
